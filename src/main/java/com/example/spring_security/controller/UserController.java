@@ -53,6 +53,7 @@ public class UserController {
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
         String token = jwtGenerator.generateToken(authentication);
 
         return new ResponseEntity<>(new AuthResponseDTO(token), HttpStatus.OK);
@@ -65,6 +66,7 @@ public class UserController {
                         .authenticate(new UsernamePasswordAuthenticationToken(userRequest.getUsername(), userRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
         String token = jwtGenerator.generateToken(authentication);
 
         return new ResponseEntity<>(new AuthResponseDTO(token), HttpStatus.OK);

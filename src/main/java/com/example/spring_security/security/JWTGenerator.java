@@ -47,7 +47,6 @@ public class JWTGenerator {
                     .parser()
                     .setSigningKey(key)
                     .parseClaimsJws(token);
-
             return true;
         } catch (Exception ex) {
             throw new AuthenticationCredentialsNotFoundException("Jwt was expired or incorrect!");
