@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring project
+  profiles:
+    include:
+      - db
+      - mail
+  config:
+    import: optional:file:.env.properties
+server:
+  port: ${PORT}
